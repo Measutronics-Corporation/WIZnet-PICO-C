@@ -7,8 +7,6 @@
 #ifndef _W5X00_SPI_H_
 #define _W5X00_SPI_H_
 
-#include "board_list.h"
-
 /**
  * ----------------------------------------------------------------------------------------------------
  * Macros
@@ -27,6 +25,7 @@
 #define PIN_IRQ 24
 
 #else
+
 /* SPI */
 #define SPI_PORT spi0
 
@@ -35,7 +34,6 @@
 #define PIN_MISO 16
 #define PIN_CS 17
 #define PIN_RST 20
-#define PIN_IRQ 21
 
 /* Use SPI DMA */
 //#define USE_SPI_DMA // if you want to use SPI DMA, uncomment.

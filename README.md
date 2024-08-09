@@ -1,102 +1,78 @@
-# Getting Started with Ethernet Examples
+# Getting Started with LwIP Examples
 
-These sections will guide you through a series of steps from configuring development environment to running ethernet examples using the **WIZnet's ethernet products**.
+These sections will guide you through a series of steps from configuring development environment to running LwIP examples using the **WIZnet's ethernet products**.
 
-- [Getting Started with Ethernet Examples](#getting-started-with-ethernet-examples)
-  - [Development environment configuration](#development-environment-configuration)
-  - [Hardware requirements](#hardware-requirements)
-  - [Ethernet example structure](#ethernet-example-structure)
-  - [Ethernet example testing](#ethernet-example-testing)
-  - [How to use port directory](#how-to-use-port-directory)
+- [**Development environment configuration**](#development_environment_configuration)
+- [**Hardware requirements**](#hardware_requirements)
+- [**LwIP example structure**](#lwip_example_structure)
+- [**LwIP example testing**](#lwip_example_testing)
+- [**How to use port directory**](#how_to_use_port_directory)
 
 
 
 <a name="development_environment_configuration"></a>
 ## Development environment configuration
 
-To test the ethernet examples, the development environment must be configured to use Raspberry Pi Pico, W5100S-EVB-Pico, W5500-EVB-Pico, W55RP20-EVB-Pico, W5100S-EVB-Pico2 or W5500-EVB-Pico2.
+To test the LwIP examples, the development environment must be configured to use Raspberry Pi Pico, W5100S-EVB-Pico, W5500-EVB-Pico or W55RP20-EVB-Pico.
 
-These examples were tested after configuring the development environment on **Windows**. Please refer to '**Chapter 3: Installing the Raspberry Pi Pico VS Code Extension**' in the document below and configure accordingly.
+The LwIP examples were tested by configuring the development environment for **Windows**. Please refer to the '**9.2. Building on MS Windows**' section of '**Getting started with Raspberry Pi Pico**' document below and configure accordingly.
 
 - [**Getting started with Raspberry Pi Pico**][link-getting_started_with_raspberry_pi_pico]
 
-**Visual Studio Code** was used during development and testing of ethernet examples, the guide document in each directory was prepared also base on development with Visual Studio Code. Please refer to corresponding document.
+**Visual Studio Code** was used during development and testing of LwIP examples, the guide document in each directory was prepared also base on development with Visual Studio Code. Please refer to corresponding document.
 
 
 
 <a name="hardware_requirements"></a>
 ## Hardware requirements
 
-The ethernet examples use **Raspberry Pi Pico** and **WIZnet Ethernet HAT** - ethernet I/O module built on WIZnet's [**W5100S**][link-w5100s] ethernet chip, **W5100S-EVB-Pico** - ethernet I/O module built on [**RP2040**][link-rp2040] and WIZnet's [**W5100S**][link-w5100s] ethernet chip,  **W5500-EVB-Pico** and **W55RP20-EVB-Pico** - ethernet I/O module built on [**RP2040**][link-rp2040] and WIZnet's [**W5500**][link-w5500] ethernet chip, **W5100S-EVB-Pico2** - ethernet I/O module built on [**RP2350**][link-rp2350] and WIZnet's [**W5100S**][link-w5100s] ethernet chip or **W5100S-EVB-Pico2** - ethernet I/O module built on [**RP2350**][link-rp2350] and WIZnet's [**W5100S**][link-w5100s] ethernet chip.
+The LwIP examples use **Raspberry Pi Pico** and **WIZnet Ethernet HAT** - ethernet I/O module built on WIZnet's [**W5100S**][link-w5100s] ethernet chip, **W5100S-EVB-Pico** - ethernet I/O module built on [**RP2040**][link-rp2040] and WIZnet's [**W5100S**][link-w5100s] ethernet chip or **W5500-EVB-Pico** and **W55RP20-EVB-Pico** - ethernet I/O module built on [**RP2040**][link-rp2040] and WIZnet's [**W5500**][link-w5500] ethernet chip.
 
-- [**Raspberry Pi Pico**][link-raspberry_pi_pico] & [**WIZnet Ethernet HAT**][link-wiznet_ethernet_hat]
+- [**Raspberry Pi Pico**][link-raspberry_pi_pico] & - [**WIZnet Ethernet HAT**][link-wiznet_ethernet_hat]
 - [**W5100S-EVB-Pico**][link-w5100s-evb-pico]
 - [**W5500-EVB-Pico**][link-w5500-evb-pico]
 - [**W55RP20-EVB-Pico**][link-w55rp20-evb-pico]
 - [**W5100S-EVB-Pico2**][link-w5100s-evb-pico2]
 - [**W5500-EVB-Pico2**][link-w5500-evb-pico2]
 
-<a name="ethernet_example_structure"></a>
-## Ethernet example structure
 
-Examples are available at '**WIZnet-PICO-C/examples/**' directory. As of now, following examples are provided.
+<a name="lwip_example_structure"></a>
+## LwIP example structure
 
-- [**CAN**][link-can]
+Examples are available at '**WIZnet-PICO-LWIP-C/examples/**' directory. As of now, following examples are provided.
+
 - [**DHCP & DNS**][link-dhcp_dns]
-- [**FTP**][link-ftp]
-	- [**Client**][link-ftp_client]
-	- [**Server**][link-ftp_server]
-- [**HTTP**][link-http]
-	- [**Server**][link-http_server]
 - [**Loopback**][link-loopback]
-- [**MQTT**][link-mqtt]
-	- [**Publish**][link-mqtt_publish]
-	- [**Publish & Subscribe**][link-mqtt_publish_subscribe]
-	- [**Subscribe**][link-mqtt_subscribe]
-- [**NETBIOS**][link-netbios]
-- [**Network install**][link-network_install]
-- [**PPPoE**][link-pppoe]
-- [**SNTP**][link-sntp]
-- [**TCP Client over SSL**][link-tcp_client_over_ssl]
-- [**TCP server multi socket**][link-tcp_server_multi_socket]
-- [**TFTP**][link-tftp]
-- [**UDP**][link-UDP]
-- [**UDP multicast**][link-UDP_multicast]
-	- [**UDP multicast receiver**][link-UDP_multicast_receiver]
-- [**uPnP**][link-upnp]
+- [**iPerf**][link-iperf]
 
-Note that **ioLibrary_Driver**, **mbedtls**, **pico-sdk** are needed to run ethernet examples.
+Note that **ioLibrary_Driver**, **pico-sdk**, **pico-extras** are needed to run LwIP examples.
 
 - **ioLibrary_Driver** library is applicable to WIZnet's W5x00 ethernet chip.
-- **mbedtls** library supports additional algorithms and support related to SSL and TLS connections.
 - **pico-sdk** is made available by Pico to enable developers to build software applications for the Pico platform.
+- **pico-extras** provides additional useful functions not provided by pico-sdk.
 
-Libraries are located in the '**WIZnet-PICO-C/libraries/**' directory.
+Libraries are located in the '**WIZnet-PICO-LWIP-C/libraries/**' directory.
 
 - [**ioLibrary_Driver**][link-iolibrary_driver]
-- [**mbedtls**][link-mbedtls]
 - [**pico-sdk**][link-pico_sdk]
+- [**pico-extras**][link-pico_extras]
 
-If you want to modify the code that MCU-dependent and use a MCU other than **RP2040**, you can modify it in the '**WIZnet-PICO-C/port/**' directory.
+If you want to modify the code that MCU-dependent and use a MCU other than **RP2040**, you can modify it in the '**WIZnet-PICO-LWIP-C/port/**' directory.
 
-port is located in the '**WIZnet-PICO-C/port/**' directory.
+port is located in the '**WIZnet-PICO-LWIP-C/port/**' directory.
 
 - [**ioLibrary_Driver**][link-port_iolibrary_driver]
-- [**mbedtls**][link-port_mbedtls]
+- [**lwip**][link-port_lwip]
 - [**timer**][link-port_timer]
 
-The structure of this WIZnet-PICO-C 2.0.0 version or higher has changed a lot compared to the previous version. If you want to refer to the previous version, please refer to the link below.
-
-- [**WIZnet-PICO-C 1.0.0 version**][link-wiznet_pico_c_1_0_0_version]
 
 
-
-<a name="ethernet_example_testing"></a>
-## Ethernet example testing
+<a name="lwip_example_testing"></a>
+## LwIP example testing
 
 1. Download
 
-If the ethernet examples are cloned, the library set as a submodule is an empty directory. Therefore, if you want to download the library set as a submodule together, clone the ethernet examples with the following Git command.
+If the LwIP examples are cloned, the library set as a submodule is an empty directory. Therefore, if you want to download the library set as a submodule together, clone the LwIP examples with the following Git command.
 
 ```cpp
 /* Change directory */
@@ -107,23 +83,21 @@ cd [user path]
 cd D:/WIZnet-PICO
 
 /* Clone */
-git clone --recurse-submodules https://github.com/WIZnet-ioNIC/WIZnet-PICO-C.git
+git clone --recurse-submodules https://github.com/WIZnet-ioNIC/WIZnet-PICO-LWIP-C.git
 ```
 
 With Visual Studio Code, the library set as a submodule is automatically downloaded, so it doesn't matter whether the library set as a submodule is an empty directory or not, so refer to it.
 
 2. Setup board
 
-Setup the board in '**CMakeLists.txt**' in '**WIZnet-PICO-C/**' directory according to the evaluation board to be used referring to the following.
+Setup the board in '**CMakeLists.txt**' in '**WIZnet-PICO-LWIP-C/**' directory according to the evaluation board to be used referring to the following.
 
 - WIZnet Ethernet HAT
 - W5100S-EVB-Pico
 - W5500-EVB-Pico
 - W55RP20-EVB-Pico
-- W5100S-EVB-Pico2
-- W5500-EVB-Pico2
 
-For example, when using WIZnet Ethernet HAT :
+For example, when using WIZnet Ethernet HAT or W5100S-EVB-Pico :
 
 ```cpp
 # Set board
@@ -137,31 +111,17 @@ When using W5500-EVB-Pico :
 set(BOARD_NAME W5500_EVB_PICO)
 ```
 
+When using W55RP20-EVB-Pico :
+
+```cpp
+# Set board
+set(BOARD_NAME W55RP20_EVB_PICO)
+```
+
 3. Test
 
-Please refer to 'README.md' in each example directory to find detail guide for testing ethernet examples.
+Please refer to 'README.md' in each example directory to find detail guide for testing LwIP examples.
 
-The following provides instructions for applying a patch file for example testing.
-> ※ If the board pauses when rebooting using W55RP20-EVB-Pico, patch it as follows.
->
-> ```cpp
-> // Patch
-> git apply ./patches/0001_pico_sdk_clocks.patch
-> ```
-
-> ※ To test the TFTP example, please apply the following patch.
-> 
-> ```cpp
-> cd libraries/ioLibrary_Driver
-> git apply ../../patches/0002_iolibrary_driver_tftp.patch
-> ```
-
-> ※ To test the FTP client example, please apply the following patch.
-> 
-> ```cpp
-> cd libraries/ioLibrary_Driver
-> git apply ../../patches/0003_iolibrary_driver_ftp_client.patch
-> ```
 
 
 <a name="how_to_use_port_directory"></a>
@@ -170,22 +130,23 @@ The following provides instructions for applying a patch file for example testin
 We moved the MCU dependent code to the port directory. The tree of port is shown below.
 
 ```
-WIZnet-PICO-C
+WIZnet-PICO-LWIP-C
 ┣ port
     ┣ ioLibrary_Driver
     ┃   ┣ inc
     ┃   ┃   ┣ w5x00_gpio_irq.h
     ┃   ┃   ┣ w5x00_spi.h
-    ┃   ┃   ┣ wiznet_spi.h
-    ┃   ┃   ┗ wiznet_spi_pio.h
+    ┃   ┃   ┣ wiznet_spi_pio.h
+    ┃   ┃   ┗ wiznet_spi.h
     ┃   ┗ src
     ┃   ┃   ┣ w5x00_gpio_irq.c
     ┃   ┃   ┣ w5x00_spi.c
-    ┃   ┃   ┣ w5x00_spi_pio.c
-    ┃   ┃   ┗ w5x00_spi_pio.pio
-    ┣ mbedtls
-    ┃   ┗ inc
-    ┃   ┃   ┗ ssl_config.h
+    ┃   ┃   ┣ wiznet_spi_pio.c
+    ┃   ┃   ┗ wiznet_spi_pio.pio
+    ┣ lwip
+    ┃   ┣ lwipopts.h
+    ┃   ┣ w5x00_lwip.c
+    ┃   ┗ w5x00_lwip.h
     ┣ timer
     ┃   ┣ timer.c
     ┃   ┗ timer.h
@@ -195,7 +156,7 @@ WIZnet-PICO-C
 
 - **ioLibrary_Driver**
 
-If you want to change things related to **SPI**, such as the SPI port number and SPI read/write function, or GPIO port number and function related to **interrupt** or use a different MCU without using the RP2040, you need to change the code in the '**WIZnet-PICO-C/port/ioLibrary_Driver/**' directory. Here is information about functions.
+If you want to change things related to **SPI**, such as the SPI port number and SPI read/write function, or GPIO port number and function related to **interrupt** or use a different MCU without using the RP2040, you need to change the code in the '**WIZnet-PICO-LWIP-C/port/ioLibrary_Driver/**' directory. Here is information about functions.
 
 ```cpp
 /* W5x00 */
@@ -377,7 +338,7 @@ static void wizchip_gpio_interrupt_callback(uint gpio, uint32_t events);
 
 - **timer**
 
-If you want to change things related to the **timer**. Also, if you use a different MCU without using the RP2040, you need to change the code in the '**WIZnet-PICO-C/port/timer/**' directory. Here is information about functions.
+If you want to change things related to the **timer**. Also, if you use a different MCU without using the RP2040, you need to change the code in the '**WIZnet-PICO-LWIP-C/port/timer/**' directory. Here is information about functions.
 
 ```cpp
 /* Timer */
@@ -418,43 +379,26 @@ Link
 
 [link-getting_started_with_raspberry_pi_pico]: https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf
 [link-rp2040]: https://www.raspberrypi.org/products/rp2040/
-[link-rp2350]: https://www.raspberrypi.com/products/rp2350/
 [link-w5100s]: https://docs.wiznet.io/Product/iEthernet/W5100S/overview
 [link-w5500]: https://docs.wiznet.io/Product/iEthernet/W5500/overview
-[link-w55rp20-evb-pico]: https://docs.wiznet.io/Product/ioNIC/W55RP20/w55rp20-evb-pico#overview
-[link-raspberry_pi_pico]: https://www.raspberrypi.org/products/raspberry-pi-pico/getting_started/raspberry_pi_pico_main.png
+[link-raspberry_pi_pico]: https://www.raspberrypi.org/products/raspberry-pi-pico/
+[link-raspberry_pi_pico_main]: https://github.com/Wiznet/RP2040-HAT-LWIP-C/blob/main/static/images/getting_started/raspberry_pi_pico_main.png
 [link-wiznet_ethernet_hat]: https://docs.wiznet.io/Product/Open-Source-Hardware/wiznet_ethernet_hat
+[link-wiznet_ethernet_hat_main]: https://github.com/Wiznet/RP2040-HAT-LWIP-C/blob/main/static/images/getting_started/wiznet_ethernet_hat_main.png
 [link-w5100s-evb-pico]: https://docs.wiznet.io/Product/iEthernet/W5100S/w5100s-evb-pico
+[link-w5100s-evb-pico_main]: https://github.com/Wiznet/RP2040-HAT-LWIP-C/blob/main/static/images/getting_started/w5100s-evb-pico_main.png
 [link-w5500-evb-pico]: https://docs.wiznet.io/Product/iEthernet/W5500/w5500-evb-pico
-[link-CAN]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/can
-[link-dhcp_dns]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/dhcp_dns
-[link-ftp]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/ftp
-[link-ftp_client]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/ftp/client
-[link-ftp_server]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/ftp/server
-[link-http]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/http
-[link-http_server]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/http/server
-[link-loopback]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/loopback
-[link-mqtt]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/mqtt
-[link-mqtt_publish]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/mqtt/publish
-[link-mqtt_publish_subscribe]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/mqtt/publish_subscribe
-[link-mqtt_subscribe]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/mqtt/subscribe
-[link-netbios]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/netbios
-[link-network_install]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/network_install
-[link-pppoe]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/pppoe
-[link-sntp]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/sntp
-[link-tcp_client_over_ssl]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/tcp_client_over_ssl
-[link-tcp_server_multi_socket]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/tcp_server_multi_socket
-[link-tftp]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/tftp
-[link-UDP]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/udp
-[link-UDP_multicast]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/udp_multicast
-[link-UDP_multicast_receiver]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/udp_multicast/udp_multicast_receiver
-[link-upnp]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/examples/upnp
+[link-w5500-evb-pico_main]: https://github.com/Wiznet/RP2040-HAT-LWIP-C/blob/main/static/images/getting_started/w5500-evb-pico_main.png
+[link-w5100s-evb-pico2]:https://docs.wiznet.io/Product/iEthernet/W5100S/w5100s-evb-pico2
+[link-w5500-evb-pico2]:https://docs.wiznet.io/Product/iEthernet/W5500/w5500-evb-pico2
+[link-w5500-evb-pico]: https://docs.wiznet.io/Product/iEthernet/W5500/w5500-evb-pico
+[link-w55rp20-evb-pico]: https://docs.wiznet.io/Product/ioNIC/W55RP20/w55rp20-evb-pico
+[link-dhcp_dns]: https://github.com/Wiznet/RP2040-HAT-LWIP-C/tree/main/examples/dhcp_dns
+[link-loopback]: https://github.com/Wiznet/RP2040-HAT-LWIP-C/tree/main/examples/loopback
+[link-iperf]: https://github.com/Wiznet/RP2040-HAT-LWIP-C/tree/main/examples/lwiperf
 [link-iolibrary_driver]: https://github.com/Wiznet/ioLibrary_Driver
-[link-mbedtls]: https://github.com/ARMmbed/mbedtls
 [link-pico_sdk]: https://github.com/raspberrypi/pico-sdk
-[link-port_iolibrary_driver]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/port/ioLibrary_Driver
-[link-port_mbedtls]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/port/mbedtls
-[link-port_timer]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/main/port/timer
-[link-wiznet_pico_c_1_0_0_version]: https://github.com/WIZnet-ioNIC/WIZnet-PICO-C/tree/1.0.0
-[link-w5100s-evb-pico2]: https://docs.wiznet.io/Product/iEthernet/W5100S/w5100s-evb-pico2
-[link-w5500-evb-pico2]: https://docs.wiznet.io/Product/iEthernet/W5500/w5500-evb-pico2
+[link-pico_extras]: https://github.com/raspberrypi/pico-extras
+[link-port_iolibrary_driver]: https://github.com/Wiznet/RP2040-HAT-LWIP-C/tree/main/port/ioLibrary_Driver
+[link-port_lwip]: https://github.com/Wiznet/RP2040-HAT-LWIP-C/tree/main/port/lwip
+[link-port_timer]: https://github.com/Wiznet/RP2040-HAT-LWIP-C/tree/main/port/timer
